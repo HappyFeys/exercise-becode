@@ -22,11 +22,25 @@ function askTvSerie(mySerie) {
 
 
 function randomizeCast(tvSerie) {
-    for (let i = 0; i < n; i++) {
-        tvSerie.members[i] = tvSerie.members[Math.floor(Math.random()*n)]
+    let shuffledArray=[];
+    let usedIndexes=[];
+    for (let i = 0; i < tvSerie.members.length; i++) {
+        let randomNumber = Math.floor(Math.random()*tvSerie.members.length)
+        console.log(randomNumber);
+        if (!usedIndexes.includes(randomNumber)) {
+            shuffledArray.push(tvSerie.members[randomNumber]);
+            usedIndexes.push(randomNumber);
+            console.log("Je suis rentré dans le if");
+          } else {
+            randomNumber = Math.floor(Math.random() * tvSerie.members.length);
+            shuffledArray.push(tvSerie.members[randomNumber]);
+            console.log('Je suis rentré dans le else');
+          }
     }
+     return shuffledArray; 
 }
 
-randomizeCast(askTvSerie(mySerie))
 
-console.log(mySerie);
+console.log(randomizeCast(askTvSerie(mySerie)));
+
+

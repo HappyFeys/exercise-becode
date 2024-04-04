@@ -34,4 +34,6 @@ function computeChange(price, moneyHanded){
     return arrChange
   }
 
-  console.log(computeChange(12.30,50));
+console.log(computeChange(1756.50,2000));
+console.log(computeChange(54484.848,200000));
+console.log(computeChange(2554.45,2000));
